@@ -2,16 +2,11 @@ App = Ember.Application.create();
 
 App.Router.map(function() {
   // put your routes here
-  this.route('index');
-  this.route('about');
-  this.route('api');
+  this.resource('about');
+  this.resource('developer',{path:'about/:name'});
+  this.resource('history');
 });
 
-App.IndexRoute = Ember.Route.extend({
-  model: function() {
-    return ['red', 'yellow', 'blue'];
-  }
-});
 App.AboutRoute = Ember.Route.extend({
   model: function() {
   	return App.DEVELOPERS;

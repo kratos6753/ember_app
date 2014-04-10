@@ -3,9 +3,25 @@ body {
 	margin: 0;
 	padding: 0;
 }
-.content,footer {
+.content {
 	margin: 20px;
 }
-footer {
-	border-top:1px solid #ccc;
+.active {
+	font-weight: bold;
+}
+.profile {
+	margin: 20px 0;
+}
+.footer {
+	clear:both;
+	width:100%;
+	text-align: center;
+}
+.hist {
+	margin:0px auto;
+	float: none;
+}
+.cmt {
+	height: 400px;
+	overflow-y: scroll;
 }

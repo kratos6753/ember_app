@@ -25,8 +25,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        {{#link-to 'about'}}About{{/link-to}}
-        {{#link-to 'api'}}Api{{/link-to}}
+        <li>{{#linkTo 'about'}}About{{/linkTo}}</li>
+        <li>{{#linkTo 'history'}}History{{/linkTo}}</li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -34,36 +34,53 @@
 <div class="content">
     {{outlet}}
 </div>
-<footer>
+<div class="footer">
   <span>&copy chiru 2014</span>
-</footer>
+</div>
   </script>
 
   <script type="text/x-handlebars" id="index">
     <h2>Welcome to Ember.js</h2>
-    <ul>
-    {{#each item in model}}
-      <li>{{item}}</li>
-    {{/each}}
-    </ul>
   </script>
   <script type="text/x-handlebars" id="about">
     <h2>This is an about page</h2>
     <h6>Here is a list of developers who colaberated in this project</h6>
     <ul>
     {{#each}}
-    <li class="list-unstyled col-md-8">
+    <li class="list-unstyled profile col-md-8">
     <div class="col-md-4">
       <img {{bind-attr src='image'}} class="img-thumbnail" />
     </div>
     <div class="col-md-8">
-      <h2>{{name}}</h2>
+      <h2>{{#linkTo 'developer' this tagName='li'}}{{name}}{{/linkTo}}</h2>
       <h6>{{description}}</h6>
-      <p><button class='btn btn-success'>Hire</button></p>
+      <p><button class='btn btn-success'>Hire {{name}}</button></p>
     </div>
     </li>
     {{/each}}
     </ul>
+  </script>
+  <script type="text/x-handlebars" id="history">
+  <div class="col-md-8 hist">
+    <h2>This is a History page</h2>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+  </div>
+  </script>
+  <script type="text/x-handlebars" id="developer">
+    <div class="col-md-4">
+      <img {{bind-attr src='image'}} class="img-thumbnail" />
+    </div>
+    <div class="col-md-4">
+      <h2>{{name}}</h2>
+      <h6>{{description}}</h6>
+      <p><button class='btn btn-success'>Hire {{name}}</button></p>
+      <label>Comments:</label><br>
+      <textarea></textarea>
+      <button class='btn btn-sm btn-primary'>Post Comment</button>
+    </div>
+    <div class="col-md-4 cmt">
+      
+    </div>
   </script>
 
   <script src="js/libs/jquery-1.10.2.js"></script>
