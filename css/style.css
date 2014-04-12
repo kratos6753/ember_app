@@ -24,7 +24,11 @@ body {
 .cmt {
 	height: 400px;
 	overflow-y: scroll;
+<<<<<<< HEAD
 }
 .name:hover {
 	cursor: pointer;
 } 
+=======
+}
+>>>>>>> eae1a70d9fba1ea9f00f30c00b225871cdb89999
