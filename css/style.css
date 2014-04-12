@@ -25,3 +25,6 @@ body {
 	height: 400px;
 	overflow-y: scroll;
 }
+.name:hover {
+	cursor: pointer;
+} 
